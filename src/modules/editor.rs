@@ -2,6 +2,7 @@ use std::io::{ Read, Write, stdout };
 use std::fs::{ read_to_string };
 use termion::screen::IntoAlternateScreen;
 
+#[allow(dead_code)]
 pub fn editor(file_path: &str) {
     let mut file_buffer = String::new();
 

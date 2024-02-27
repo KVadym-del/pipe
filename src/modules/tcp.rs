@@ -91,7 +91,7 @@ fn http_handle_client(mut stream: TcpStream) {
                 }
             }
             let mut path = PathBuf::new();
-            path.push(""); // src/resources/html
+            path.push("src/resources/html");
             path.push(resource.trim_start_matches("/"));
             stream.write_all(b"HTTP/1.1 200 OK\r\n\r\n").unwrap();
             stream.write_all(&fs::read(path).unwrap()).unwrap();

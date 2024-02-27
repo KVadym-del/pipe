@@ -33,10 +33,7 @@ fn main() {
             tcp::client();
         }
         "editor" => {
-            // let file_path = args.next().ok_or_else(|| {
-                // eprintln!("ERROR: no file path provided");
-            // }).unwrap();
-            // editor::editor(&file_path);
+            // TODO: implement editor
         }
         _ => {
             eprintln!("ERROR: invalid pipe state\n\t=> USAGE: cargo run [server|client]");
