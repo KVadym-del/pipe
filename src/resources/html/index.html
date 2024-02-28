@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<html>
+    <head>
+        <title>pipe search</title>
+    </head>
+    <body>
+        <h1>Provide Your Query:</h1>
+        <input id="query" type="text" />
+        <script>
+          function liveSearch() {
+            var search = document.getElementById("query").value;
+            var div = document.getElementById("results");
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://127.0.0.1:9998/search?search=" + search, true);
+            xhr.onreadystatechange = function() {
+              if (xhr.readyState == 4 && xhr.status == 200) {
+                div.innerHTML = xhr.responseText;
+                }
+            };
+          xhr.send();
+          }
+        </script>
+    </body>
+</html>
+</html>
+

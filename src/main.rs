@@ -1,6 +1,6 @@
 use std::env;
 
-#[path = "modules/tcp.rs"] mod tcp;
+#[path = "modules/pipe.rs"] mod pipe;
 // #[path = "modules/editor.rs"] mod editor;
 
 fn main() {
@@ -18,10 +18,10 @@ fn main() {
             }).unwrap();
             match server_type.as_str() {
                 "tcp" => {
-                    tcp::server(tcp::ServerType::TCP);
+                    pipe::server(pipe::ServerType::TCP);
                 }
                 "http" => {
-                    tcp::server(tcp::ServerType::HTTP);
+                    pipe::server(pipe::ServerType::HTTP);
                 }
                 _ => {
                     // TODO: combine tcp and http server into one
@@ -30,7 +30,7 @@ fn main() {
             }
         }
         "client" => {
-            tcp::client();
+            pipe::client();
         }
         "editor" => {
             // TODO: implement editor
